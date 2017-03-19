@@ -6,7 +6,7 @@ public class Hedgehog {
 
     public static void main(String[] args) {
         Hedgehog hed = new Hedgehog();
-        hed.apples = new int[][]{{3, 4, 2}, {0, 1, 9}, {12, 5, 4}, {1, 20, 3}};
+        hed.apples = new int[][]{{3, 4, 2}, {21, 1, 9}, {12, 5, 4}, {1, 20, 3}};
         hed.printArray(hed.apples);
         System.out.println(hed.getMaxApplesCount());
         hed.printArray(hed.weights);
@@ -36,5 +36,9 @@ public class Hedgehog {
             }
         }
         return weights[apples.length - 1][apples[0].length - 1];
+    }
+
+    public String getPath() {
+        return "";
     }
 }
