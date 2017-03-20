@@ -9,7 +9,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class HedgehogWrapper {
+public class HedgehogRunner {
 
     public static void main(String[] args) {
         if (args.length < 1) {
@@ -74,9 +74,7 @@ public class HedgehogWrapper {
 
             int[][] retArray = new int[apples.length][maxColumn];       // we need to align columns count
             for (int k = 0; k < apples.length; k++) {
-                for (int n = 0; n < apples[k].length; n++) {
-                    retArray[k][n] = apples[k][n];
-                }
+                System.arraycopy(apples[k], 0, retArray[k], 0, apples[k].length);
             }
             return retArray;
 
@@ -89,9 +87,9 @@ public class HedgehogWrapper {
 
     public static void printArray(int arr[][]) {
         if (arr != null) {
-            for (int i = 0; i < arr.length; i++) {
-                for (int j = 0; j < arr[i].length; j++) {
-                    System.out.print(arr[i][j] + "\t");
+            for (int[] anArr : arr) {
+                for (int anAnArr : anArr) {
+                    System.out.print(anAnArr + "\t");
                 }
                 System.out.println();
             }
